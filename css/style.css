@@ -9,6 +9,11 @@
 body {
     font-family: "Roboto", sans-serif;
 }
+h1,
+h2,
+h3 {
+    margin-bottom: 0;
+}
 .py-130 {
     padding: 130px 0px;
 }
@@ -75,31 +80,68 @@ header {
 }
 /* End NavBar Style */
 /* Start News Category Style */
-.news-category-area .news-categories-list{
+.news-category-area .news-categories-list {
     padding-left: 0px;
     display: flex;
     padding: 29px 0px;
 }
-.news-category-area .news-categories-list li{
+.news-category-area .news-categories-list li {
     margin-right: 30px;
     padding: 4px 7px;
-    transition: all .3s;
+    transition: all 0.3s;
 }
-.news-category-area .news-categories-list li:hover{
-    background: #EEEFFF;
+.news-category-area .news-categories-list li:hover {
+    background: #eeefff;
 }
-.news-category-area .news-categories-list li button{
+.news-category-area .news-categories-list li button {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     color: #858585;
     border: none;
     background: none;
-    transition: all .3s;
-  
+    transition: all 0.3s;
 }
-.news-category-area .news-categories-list li:hover button{
+.news-category-area .news-categories-list li:hover button {
     color: #5d5fef;
-  
 }
 /* End News Category Style */
+
+/* Start Count News Category Style */
+.count-news-category-area .length-releted-categorey-news {
+    padding: 21px 18px;
+    background: #ffffff;
+}
+/* End Count News Category Style */
+
+/* Start Filter News Section */
+.filter-news-area .sort-by-view {
+}
+.filter-news-area .sort-by-view label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    margin-top: 10px;
+    margin-right: 33px;
+}
+.filter-news-area .sort-by-view {
+}
+.sort-by-date-trending ul li {
+    padding: 12px 20px;
+    background: #5d5fef;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #ffffff;
+    border: 1px solid #5d5fef;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.sort-by-date-trending ul li:hover {
+    border: 1px solid #5d5fef;
+    background: transparent;
+    color: #5d5fef;
+}
+/* End Filter News Section */
