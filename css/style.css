@@ -16,17 +16,7 @@ h3 {
 }
 p {
     margin-bottom: 0;
-}
-.py-130 {
-    padding: 130px 0px;
-}
-.px-100 {
-    padding: 0 100px;
-}
-.bg-primary {
-    background-color: #289bde !important;
-}
-/* End Custome Style */
+} /* End Custome Style */
 
 /* Start NavBar Style */
 header {
@@ -80,8 +70,8 @@ header {
 }
 .navbar .navbar-nav .nav-item:last-child:hover .nav-link {
     border-bottom: 1px solid transparent;
-}
-/* End NavBar Style */
+} /* End NavBar Style */
+
 /* Start News Category Style */
 .news-category-area .news-categories-list {
     padding-left: 0px;
@@ -107,8 +97,7 @@ header {
 }
 .news-category-area .news-categories-list li:hover button {
     color: #5d5fef;
-}
-/* End News Category Style */
+} /* End News Category Style */
 
 /* Start Count News Category Style */
 .count-news-category-area .length-releted-categorey-news {
@@ -120,8 +109,7 @@ header {
     font-size: 18px;
     line-height: 21px;
     color: #000000;
-}
-/* End Count News Category Style */
+} /* End Count News Category Style */
 
 /* Start Filter News Section */
 .filter-news-area .sort-by-view label {
@@ -148,8 +136,7 @@ header {
     border: 1px solid #5d5fef;
     background: transparent;
     color: #5d5fef;
-}
-/* End Filter News Section */
+} /* End Filter News Section */
 
 /* Start News List Section */
 .news-list-area .single-news-card .single-news-info {
@@ -202,16 +189,20 @@ header {
     line-height: 21px;
     color: #515151;
 }
+.single-news-card .footer-news .news-reader-rating p {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #515151;
+}
 .single-news-card .footer-news .news-details-modal i {
     font-weight: 700;
     font-size: 18px;
     color: #289bde;
     cursor: pointer;
-}
-/* End  News List Section */
+} /* End  News List Section */
 
 /* Start New Details Modal Section */
-
 .single-news-details .single-news-info {
     display: flex;
     flex-direction: column;
@@ -262,10 +253,15 @@ header {
     line-height: 21px;
     color: #515151;
 }
+.single-news-details .footer-news .news-reader-rating p {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #515151;
+}
 .single-news-details .footer-news .news-details-modal p {
     font-weight: 700;
     font-size: 17px;
     color: #515151;
     cursor: pointer;
-}
-/* End New Details Modal Section */
+} /* End New Details Modal Section */
