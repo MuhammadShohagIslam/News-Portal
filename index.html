@@ -114,84 +114,11 @@
 
         <!-- Start News List Section -->
         <section class="news-list-area">
-            <div class="container">
-                <div class="single-news-card bg-white mb-4">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="image-thumbnail-news p-4">
-                                <img
-                                    class="img-fluid w-100"
-                                    src="images/news.png"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="single-news-info pe-5">
-                                <h2>
-                                    The best fashion influencers to follow for
-                                    sartorial inspiration
-                                </h2>
-                                <p class="my-4">
-                                    From our favourite UK influencers to the
-                                    best missives from Milan and the coolest New
-                                    Yorkers, read on some of the best fashion
-                                    blogs out there, and for even more <br />
-                                    inspiration, do head to our separate black
-                                    fashion influencer round-up. Fancy some
-                                    shopping deals? Check out these amazing
-                                    sales: Zara Black Friday, ASOS Black Friday,
-                                    Missoma Black Friday and Gucci Black
-                                    Friday...
-                                </p>
-
-                                <div
-                                    class="footer-news d-flex justify-content-between align-items-center"
-                                >
-                                    <div
-                                        class="author-info d-flex align-items-center"
-                                    >
-                                        <div class="author-avatar">
-                                            <img
-                                                src="images/Avatar.png"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="author-profile ms-2">
-                                            <h3>Jane Cooper</h3>
-                                            <p>19393, 333</p>
-                                        </div>
-                                    </div>
-                                    <div class="total-view">
-                                        <i class="fa-regular fa-eye"></i>
-                                        <span class="ms-1">1.5M</span>
-                                    </div>
-
-                                    <div class="news-reader-rating">
-                                        <p>
-                                            Rating:<span class="ms-1">4.5</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="news-details-modal">
-                                        <i
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal"
-                                            class="fa-solid fa-arrow-right"
-                                        ></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div id="single-news-card-id" class="container"></div>
         </section>
         <!-- End News List Section -->
-        <!-- Start Modal  -->
-        <!-- Button trigger modal -->
 
-        <!-- Modal -->
+        <!-- Start Modal  -->
         <div
             class="modal fade"
             id="exampleModal"
@@ -202,9 +129,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                            Modal title
-                        </h5>
+                        <h5 class="modal-title" id="newsTitleId"></h5>
                         <button
                             type="button"
                             class="btn-close"
@@ -218,32 +143,14 @@
                                 <div class="col-md-12">
                                     <div class="image-thumbnail-news p-4">
                                         <img
+                                            id="news-thumbnail-id"
                                             class="img-fluid w-100"
-                                            src="images/news.png"
-                                            alt=""
                                         />
                                     </div>
                                 </div>
                                 <div class="col-md-12 text-center">
                                     <div class="single-news-info p-2">
-                                        <h2>
-                                            The best fashion influencers to
-                                            follow for sartorial inspiration
-                                        </h2>
-                                        <p class="my-4">
-                                            From our favourite UK influencers to
-                                            the best missives from Milan and the
-                                            coolest New Yorkers, read on some of
-                                            the best fashion blogs out there,
-                                            and for even more <br />
-                                            inspiration, do head to our separate
-                                            black fashion influencer round-up.
-                                            Fancy some shopping deals? Check out
-                                            these amazing sales: Zara Black
-                                            Friday, ASOS Black Friday, Missoma
-                                            Black Friday and Gucci Black
-                                            Friday...
-                                        </p>
+                                        <p id="newsDetailId" class="my-4"></p>
 
                                         <div
                                             class="footer-news d-flex justify-content-between align-items-center flex-wrap"
@@ -252,30 +159,31 @@
                                                 class="author-info d-flex align-items-center"
                                             >
                                                 <div class="author-avatar">
-                                                    <img
-                                                        src="images/Avatar.png"
-                                                        alt=""
-                                                    />
+                                                    <img id="authorAvatarId" />
                                                 </div>
                                                 <div
                                                     class="author-profile ms-2"
                                                 >
-                                                    <h3>Jane Cooper</h3>
-                                                    <p>19393, 333</p>
+                                                    <h3 id="authorNameId"></h3>
+                                                    <p id="publishedDateId"></p>
                                                 </div>
                                             </div>
                                             <div class="total-view">
                                                 <i
                                                     class="fa-regular fa-eye"
                                                 ></i>
-                                                <span class="ms-1">1.5M</span>
+                                                <span
+                                                    id="viewTotalId"
+                                                    class="ms-1"
+                                                ></span>
                                             </div>
 
                                             <div class="news-reader-rating">
                                                 <p class="text-black">
-                                                    Rating:<span class="ms-1"
-                                                        >4.5</span
-                                                    >
+                                                    Rating:<span
+                                                        id="ratingId"
+                                                        class="ms-1"
+                                                    ></span>
                                                 </p>
                                             </div>
 
@@ -283,14 +191,16 @@
                                                 class="news-details-modal mt-3 ms-3"
                                             >
                                                 <p>
-                                                    Is Today Pick:<span
-                                                        >False</span
-                                                    >
+                                                    Is Today Pick:
+                                                    <span
+                                                        id="isTodayPickUpId"
+                                                    ></span>
                                                 </p>
                                                 <p>
-                                                    Is Trending:<span
-                                                        >True</span
-                                                    >
+                                                    Is Trending:
+                                                    <span
+                                                        id="isTrendingId"
+                                                    ></span>
                                                 </p>
                                             </div>
                                         </div>
