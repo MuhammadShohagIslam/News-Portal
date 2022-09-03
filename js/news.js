@@ -19,9 +19,15 @@ const displayCategories = (categories) => {
         newsCategoriesElement.appendChild(listItem);
     });
 };
+
 // fetching News By Category
 const loadingNewsByCategory = (categoryId) => {
     console.log(categoryId);
+    toggleLoader(true);
+    const singleNewsCardElement = document.getElementById(
+        "single-news-card-id"
+    );
+    singleNewsCardElement.innerHTML = "";
     const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`;
     fetch(url)
         .then((res) => res.json())
@@ -30,10 +36,6 @@ const loadingNewsByCategory = (categoryId) => {
             console.log(error.message);
         });
 };
-// loading news by categories in the first loading page
-(() => {
-    loadingNewsByCategory("01");
-})();
 
 const displayNewsByCategory = (newsByCategories) => {
     console.log(newsByCategories);
@@ -110,6 +112,8 @@ const displayNewsByCategory = (newsByCategories) => {
                                 <i class="fa-regular fa-eye"></i>
                                 <span class="ms-1">${
                                     singleNews.total_view
+                                        ? singleNews.total_view
+                                        : "No Data Found"
                                 }</span>
                             </div>
 
@@ -139,6 +143,33 @@ const displayNewsByCategory = (newsByCategories) => {
         `;
         singleNewsCardElement.appendChild(createSingleNewsCardElement);
     });
+    toggleLoader(false);
+};
+
+// // selection funtion for sorting
+// const selectForSorting = () => {
+//     const sortingSelectField = document.getElementById("sortingSelectId");
+//     const sortingSelectValue = sortingSelectField.value
+//     if(sortingSelectValue === "default"){
+//         displayNewsByCategory(newsByCategories);
+//     }
+// }
+
+// // sorting news by view
+// const sortingNewsByView = (newsByCategories) => {
+//     const sortingNews = newsByCategories.sort((a, b) => b.total_view - a.total_view)
+//     console.log(sortingNews,"sortiing")
+// }
+
+// Loader
+const toggleLoader = (isLoding) => {
+    const loadingElement = document.getElementById("loaderId");
+    console.log(isLoding);
+    if (isLoding) {
+        loadingElement.classList.remove("d-none");
+    } else {
+        loadingElement.classList.add("d-none");
+    }
 };
 
 // fetching News Details By NewsId
@@ -161,6 +192,7 @@ const displayNewsDetailsByNewsId = (newsDetails) => {
     const publishedDateElem = document.getElementById("publishedDateId");
     const viewTotalElem = document.getElementById("viewTotalId");
     const ratingElem = document.getElementById("ratingId");
+    const badgeElem = document.getElementById("badgeId");
     const isTodayPickUpElem = document.getElementById("isTodayPickUpId");
     const isTrendingElem = document.getElementById("isTrendingId");
 
@@ -176,10 +208,18 @@ const displayNewsDetailsByNewsId = (newsDetails) => {
     publishedDateElem.innerText = newsDetails.author.published_date
         ? newsDetails.author.published_date
         : "Not Date";
-    viewTotalElem.innerText = newsDetails.total_view;
+    viewTotalElem.innerText = newsDetails.total_view
+        ? newsDetails.total_view
+        : "No Data Found";
     ratingElem.innerText = newsDetails.rating.number;
+    badgeElem.innerText = newsDetails.rating.badge;
     isTodayPickUpElem.innerText = newsDetails.others_info.is_todays_pick;
     isTrendingElem.innerText = newsDetails.others_info.is_trending;
 };
 
-loadCategories();
+// loading news by categories in the first loading page
+(() => {
+    loadCategories();
+    toggleLoader(true);
+    loadingNewsByCategory("01");
+})();

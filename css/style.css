@@ -64,6 +64,10 @@ header {
     transition: all 0.1s;
     border-bottom: 1px solid transparent;
 }
+.navbar .navbar-nav .nav-item .active {
+    color: #5d5fef;
+    border-bottom: 1px solid #5d5fef;
+}
 .navbar .navbar-nav .nav-item:hover .nav-link {
     color: #5d5fef;
     border-bottom: 1px solid #5d5fef;
@@ -111,7 +115,7 @@ header {
     color: #000000;
 } /* End Count News Category Style */
 
-/* Start Filter News Section */
+/* Start Filter News Style */
 .filter-news-area .sort-by-view label {
     font-weight: 400;
     font-size: 18px;
@@ -120,7 +124,7 @@ header {
     margin-top: 12px;
     margin-right: 33px;
 }
-.sort-by-date-trending ul li {
+.sort-by-date-trending ul li button {
     padding: 12px 20px;
     background: #5d5fef;
     font-weight: 400;
@@ -132,13 +136,13 @@ header {
     cursor: pointer;
     transition: all 0.3s;
 }
-.sort-by-date-trending ul li:hover {
+.sort-by-date-trending ul li button:hover {
     border: 1px solid #5d5fef;
     background: transparent;
     color: #5d5fef;
-} /* End Filter News Section */
+} /* End Filter News Style */
 
-/* Start News List Section */
+/* Start News List Style */
 .news-list-area .single-news-card .single-news-info {
     display: flex;
     flex-direction: column;
@@ -200,9 +204,9 @@ header {
     font-size: 18px;
     color: #289bde;
     cursor: pointer;
-} /* End  News List Section */
+} /* End  News List Style */
 
-/* Start New Details Modal Section */
+/* Start New Details Modal Style */
 .single-news-details .single-news-info {
     display: flex;
     flex-direction: column;
@@ -264,4 +268,23 @@ header {
     font-size: 17px;
     color: #515151;
     cursor: pointer;
-} /* End New Details Modal Section */
+} /* End New Details Modal Style */
+
+/* Start Blog Style */
+.single-blog h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #121221;
+    margin-bottom: 14px;
+}
+.single-blog p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #121221;
+}
+.single-blog p span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #121221;
+}
+/* End Blog Style */
