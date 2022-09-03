@@ -5,12 +5,11 @@ const loadCategories = () => {
         .then((res) => res.json())
         .then((data) => displayCategories(data.data.news_category))
         .catch((error) => {
-            console.log(error.message);
+            console.log(error);
         });
 };
 
 const displayCategories = (categories) => {
-    console.log(categories);
     const newsCategoriesElement = document.getElementById("newsCategoriesId");
 
     categories.forEach((category) => {
@@ -22,7 +21,6 @@ const displayCategories = (categories) => {
 
 // fetching News By Category
 const loadingNewsByCategory = (categoryId) => {
-    console.log(categoryId);
     toggleLoader(true);
     const singleNewsCardElement = document.getElementById(
         "single-news-card-id"
@@ -33,12 +31,11 @@ const loadingNewsByCategory = (categoryId) => {
         .then((res) => res.json())
         .then((data) => displayNewsByCategory(data.data))
         .catch((error) => {
-            console.log(error.message);
+            console.log(error);
         });
 };
 
 const displayNewsByCategory = (newsByCategories) => {
-    console.log(newsByCategories);
     const lengthNewsByCategoriesElement = document.getElementById(
         "lengthNewsByCategoriesElement"
     );
@@ -46,7 +43,7 @@ const displayNewsByCategory = (newsByCategories) => {
 
     if (newsByCategories.length === 0) {
         const headingElement = document.createElement("h2");
-        headingElement.innerText = `No News items found for category`;
+        headingElement.innerText = `No News Found`;
         lengthNewsByCategoriesElement.appendChild(headingElement);
     } else {
         const headingElement = document.createElement("h2");
@@ -58,15 +55,16 @@ const displayNewsByCategory = (newsByCategories) => {
         "single-news-card-id"
     );
     singleNewsCardElement.innerHTML = "";
-
-    newsByCategories.forEach((singleNews) => {
+    const sortingNews = newsByCategories.sort(
+        (a, b) => b.total_view - a.total_view
+    );
+    sortingNews.forEach((singleNews) => {
         const createSingleNewsCardElement = document.createElement("div");
         createSingleNewsCardElement.classList.add(
             "single-news-card",
             "bg-white",
             "mb-4"
         );
-        console.log(singleNews);
         createSingleNewsCardElement.innerHTML = `
             <div class="row">
                 <div class="col-md-3">
@@ -146,25 +144,9 @@ const displayNewsByCategory = (newsByCategories) => {
     toggleLoader(false);
 };
 
-// // selection funtion for sorting
-// const selectForSorting = () => {
-//     const sortingSelectField = document.getElementById("sortingSelectId");
-//     const sortingSelectValue = sortingSelectField.value
-//     if(sortingSelectValue === "default"){
-//         displayNewsByCategory(newsByCategories);
-//     }
-// }
-
-// // sorting news by view
-// const sortingNewsByView = (newsByCategories) => {
-//     const sortingNews = newsByCategories.sort((a, b) => b.total_view - a.total_view)
-//     console.log(sortingNews,"sortiing")
-// }
-
 // Loader
 const toggleLoader = (isLoding) => {
     const loadingElement = document.getElementById("loaderId");
-    console.log(isLoding);
     if (isLoding) {
         loadingElement.classList.remove("d-none");
     } else {
@@ -179,7 +161,7 @@ const loadingNewsDetailsByNewsId = (newsId) => {
         .then((res) => res.json())
         .then((data) => displayNewsDetailsByNewsId(data.data[0]))
         .catch((error) => {
-            console.log(error.message);
+            console.log(error);
         });
 };
 
